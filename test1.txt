@@ -1,0 +1,11 @@
+Commands done
+mkdir backup
+cd backup
+touch ex1.py ex2.py
+mv ex1.py exercise1.py
+mv ex2.py exercise2.py
+echo 'week 1, exercise1' exercise1.python
+mv exercise1.py ..
+rm *
+cd ..
+rmdir backup
