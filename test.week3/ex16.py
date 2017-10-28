@@ -19,7 +19,7 @@ script, filename = argv
 
 print "We are going to erase %r." % filename
 print "If you don't want that, hit CTRL-C (^C)."
-print "I you do want that, hit Return"
+print "If you do want that, hit Return"
 
 raw_input("?")
 print "Opening the file..."
