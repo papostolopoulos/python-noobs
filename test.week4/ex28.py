@@ -3,7 +3,8 @@ print "---EXERCISE 28: BOOLEAN PRACTICE---"
 
 
 
-boolean_list = [["True and True", True and True],
+boolean_list = [
+["True and True", True and True],
 ["False and True", False and True],
 ['1==1 and 2==1', 1==1 and 2==1],
 ['"test" == "test"', "test" == "test"],
@@ -14,25 +15,16 @@ boolean_list = [["True and True", True and True],
 ['"test" == "testing"', "test" == "testing"],
 ['1!=0 and 2==1', 1!=0 and 2==1],
 ['"test" != "testing"', "test" != "testing"],
-[],
-[],
-[],
-[],
-[],
-[],
-[],
-[],
-[]
-
-'"test" == 1',
-'not (True and False)',
-'not (1==1 and 0!=1)',
-'not (10 == 1 or 1000 == 1000)',
-'not (1!=10 or 3==4)',
-'not ("testing" == "testing" and "Zed" == "Cool Guy")',
-'1==1 and not ("testing"==1or1==0)',
-'"chunky" == "bacon" and not (3 == 4 or 3 == 3)',
-'3 == 3 and not ("testing" == "testing" or "Python" == "Fun")']
+['"test" == 1', "test" == 1],
+['not (True and False)', not (True and False)],
+['not (1==1 and 0!=1)', not (1==1 and 0!=1)],
+['not (10 == 1 or 1000 == 1000)', not (10 == 1 or 1000 == 1000)],
+['not (1!=10 or 3==4)', not (1!=10 or 3==4)],
+['not ("testing" == "testing" and "Zed" == "Cool Guy")', not ("testing" == "testing" and "Zed" == "Cool Guy")],
+['1==1 and not ("testing"==1or1==0)', 1==1 and not ("testing"==1 or 1==0)],
+['"chunky" == "bacon" and not (3 == 4 or 3 == 3)', "chunky" == "bacon" and not (3 == 4 or 3 == 3)],
+['3 == 3 and not ("testing" == "testing" or "Python" == "Fun")', 3 == 3 and not ("testing" == "testing" or "Python" == "Fun")]
+]
 
 def boolean_test(compare_list):
     print "Hello there. Let's do some boolean practice. This test has %s questions. Good luck!" % len(compare_list)
@@ -40,16 +32,15 @@ def boolean_test(compare_list):
     final_score = 0
 
     for x in range(0, len(compare_list)):
-        question = raw_input("Question " + str(x + 1) + ": What is the value for " + str(compare_list[x]) + "? ")
+        question = raw_input("Question " + str(x + 1) + ": What is the value for " + str(compare_list[x][0]) + "? ")
         user_answer = question.lower().capitalize()
-        print type(bool(user_answer)), type(bool(compare_list[x]))
-        if(user_answer == str(compare_list[x])):
+        if(user_answer == str(compare_list[x][1])):
             final_score += 1
-            print "That is correct! " + str(compare_list[x]) + " has a boolean value of " + str(compare_list[x]) + "\n"
+            print "That is correct! " + compare_list[x][0] + " has a boolean value of " + str(compare_list[x][1]) + "\n"
         else:
-            print "Sorry, that is incorrect. " + str(compare_list[x]) + " has a boolean value of " + str(bool(compare_list[x]))
+            print "Sorry, that is incorrect. " + compare_list[x][0] + " has a boolean value of " + str(compare_list[x][1]) + "\n"
 
-    print "Out of the " + str(len(compare_list)) + " questions, you got " + str(final_score) + " correct! \n Thanks for playing!"
+    print "Out of the " + str(len(compare_list)) + " questions, you got " + str(final_score) + " correct! \nThanks for playing!"
 
 
 boolean_test(boolean_list)
